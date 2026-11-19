@@ -1,0 +1,31 @@
+{
+  "title": "reading-ledger: how far each cited item was read, in which version, and when",
+  "description": "<p>A ledger, per work, of how far each cited item was read (read, with the sections; abstract only; bibliographic record only; not read and cited as quoted in another item; recalled, not read), which version was read, when, and in which file it is cited. The first ledgers cover the two papers of golden-window-resolution, the literature check in games/README.md of trinity-operator, and the record of the literature check of 2026-11-18. The checks resolve every DOI at Crossref or DataCite and every arXiv id, version by version, at the arXiv API, compare the title and the first author, and compare every entry with the bibliography of the work at a recorded commit. One worked example is the citation of Raith: the published golden-window paper named Raith's 1989 paper where Allaart and Kong cite Raith's 1994 paper (self-correction GW-001).</p><p>論文ごとに、引いた文献をどこまで、どの版で、いつ読んだかを残す台帳です。</p>",
+  "upload_type": "dataset",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Nemoto, Takuya",
+      "orcid": "0009-0000-1406-0547"
+    }
+  ],
+  "keywords": [
+    "research integrity",
+    "machine-readable record",
+    "DOI",
+    "Crossref",
+    "DataCite",
+    "metadata",
+    "deterministic verification"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.6084/m9.figshare.35050300",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Claude Code (Anthropic) was used to write the ledgers and the checks, at the author's request. The readings are copied from what the works and the record of the literature check say, and no item was read again to make the ledger. The author is responsible for the content. Claude is not an author. The ledgers and the text are CC BY 4.0 (LICENSE); the check scripts are MIT (LICENSE-CODE). The licence field of this record covers the ledgers and the text only. The titles and the names in the cached registry records are the records of each registry. Texts by others that this repository quotes, or keeps to verify its quotations, are not licensed under CC BY 4.0 or the MIT License and remain their owners'."
+}
