@@ -1,0 +1,126 @@
+# The reading ledger of one work: for each item of its bibliography, how far it was read, in which version, and when.
+# Field names and the reading vocabulary are explained in README.md. verification/check.py checks every field;
+# verification/check.py --online resolves every DOI and arXiv id at Crossref, DataCite and the arXiv API.
+# Seeded on 2026-11-19 from the work's own record of reading, named in [work].reading_source.
+
+[work]
+id = "trinity-operator-games"
+title = "Repeated games through the cyclic operator"
+repository = "cpsbvbng26-dotcom/trinity-operator"
+commit = "2075619beaa5aab08c004a7f990396302203da73"
+file = "games/README.md"
+kind = "markdown"
+reading_source = "the list \"Sources of the check\" in the section \"The literature check of 2026-11-18\" of games/README.md"
+
+[[item]]
+key = "10.1017/etds.2022.24"
+citation = "Allaart, P., and Kong, D. (2023). Critical values for the β-transformation with a hole at 0. Ergodic Theory and Dynamical Systems"
+title = "Critical values for the β-transformation with a hole at 0"
+first_author = "Allaart"
+doi = "10.1017/etds.2022.24"
+arxiv = "2109.10012"
+arxiv_version = "v2"
+arxiv_title = "Critical values for the β-transformation with a hole at 0"
+reading = "read"
+sections = "Proposition 1.9 and Remark 1.10"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1142/s0218348x14500169"
+citation = "Berg, K., and Kitti, M. (2014). Fractal geometry of equilibrium payoffs in discounted supergames. Fractals, 22(4), 1450016"
+title = "Fractal geometry of equilibrium payoffs in discounted supergames"
+first_author = "Berg"
+doi = "10.1142/s0218348x14500169"
+reading = "abstract only"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1016/j.aim.2016.03.047"
+citation = "Komornik, V., Kong, D., and Li, W. (2017). Hausdorff dimension of univoque sets and Devil's staircase. Advances in Mathematics"
+title = "Hausdorff dimension of univoque sets and Devil's staircase"
+first_author = "Komornik"
+doi = "10.1016/j.aim.2016.03.047"
+reading = "abstract only"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.48550/arxiv.2604.23737"
+citation = "Kuang, R., Li, B., and Xiao, Y. (2026). The Hausdorff dimension of the survivor set. arXiv 2604.23737v1"
+title = "The Hausdorff dimension of the survivor set"
+first_author = "Kuang"
+doi = "10.48550/arxiv.2604.23737"
+arxiv = "2604.23737"
+arxiv_version = "v1"
+arxiv_title = "The Hausdorff dimension of the survivor set"
+reading = "read"
+sections = "Introduction, Theorems 1.1, 1.2 and 4.3"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1112/blms.70344"
+citation = "Lu, J., Steiner, W., and Zou, Y. (2026). Hausdorff dimension of double-base expansions and binary shifts with a hole. Bulletin of the London Mathematical Society"
+title = "Hausdorff dimension of double-base expansions and binary shifts with a hole"
+first_author = "Lu"
+doi = "10.1112/blms.70344"
+arxiv = "2509.04227"
+arxiv_version = "v2"
+arxiv_title = "Hausdorff dimension of double base expansions and binary shifts with a hole"
+reading = "read"
+sections = "Sections 1–3, in full"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1006/game.2001.0901"
+citation = "Mailath, G. J., Obara, I., and Sekiguchi, T. (2002). The maximum efficient equilibrium payoff in the repeated Prisoners' Dilemma. Games and Economic Behavior"
+title = "The maximum efficient equilibrium payoff in the repeated Prisoners' Dilemma"
+first_author = "Mailath"
+doi = "10.1006/game.2001.0901"
+reading = "abstract only"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1007/bf02020954"
+citation = "Parry, W. (1960). On the β-expansions of real numbers. Acta Mathematica Academiae Scientiarum Hungaricae"
+title = "On the β-expansions of real numbers"
+first_author = "Parry"
+doi = "10.1007/bf02020954"
+reading = "recalled, not read"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1007/bf02020331"
+citation = "Rényi, A. (1957). Representations for real numbers and their ergodic properties. Acta Mathematica Academiae Scientiarum Hungaricae"
+title = "Representations for real numbers and their ergodic properties"
+first_author = "Rényi"
+doi = "10.1007/bf02020331"
+reading = "recalled, not read"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"
+
+[[item]]
+key = "10.1007/s10955-024-03265-0"
+citation = "Sun, Y., Li, B., and Ding, Y. (2024). Topological expansive Lorenz maps with a hole at critical point. Journal of Statistical Physics"
+title = "Topological expansive Lorenz maps with a hole at critical point"
+first_author = "Sun"
+doi = "10.1007/s10955-024-03265-0"
+arxiv = "2311.02465"
+arxiv_version = "v1"
+arxiv_title = "Topological expansive Lorenz maps with a hole at critical point"
+reading = "read"
+sections = "Introduction, and the statements of Theorems 1.1, 1.3 and 1.4, Corollary 1.5 and Remark 1.2"
+date_read = "2026-11-18"
+cited_in = "games/README.md"
+evidence = "games/README.md, \"The literature check of 2026-11-18\", Sources of the check"

@@ -1,0 +1,23 @@
+{
+  "_": [
+    "散文に書いた数の台帳です（cpsbvbng26-dotcom の決めごと 5）。verification/check.py は README.md と README.en.md から数を拾い、ここのどれかに当たらなければ落ちます。",
+    "dates は、書いてよい日です。fixed は、決めた値とその形です。counts は、数えて確かめる数で、re の一つ目の括弧が数、count が数え方の名です。"
+  ],
+  "dates": {
+    "2026-11-18": "文献の確認をした日。golden-window-resolution の稿を出した日",
+    "2026-11-19": "続きの稿を査読して Raith の食い違いを見つけた日。台帳を置いた日"
+  },
+  "fixed": [
+    { "re": "CC BY 4\\.0", "why": "LICENSE の版" },
+    { "re": "0009-0000-1406-0547", "check": "orcid", "why": "運営者の ORCID iD" },
+    { "re": "1989 年|1989 paper", "why": "golden-window-resolution の稿が挙げた Raith の論文の年（文献の欄の Raith89）" },
+    { "re": "1994 年|1994 paper", "why": "Allaart・Kong が挙げた Raith の論文の年（joint-continuity の文献の欄の Raith94）" },
+    { "re": "GW-001", "why": "self-correction の訂正の番号" }
+  ],
+  "counts": [
+    { "re": "台帳は (\\d+) 本", "count": "ledgers" },
+    { "re": "There are (\\d+) ledgers", "count": "ledgers" },
+    { "re": "項目は合わせて (\\d+) 件", "count": "items" },
+    { "re": "with (\\d+) items in all", "count": "items" }
+  ]
+}
