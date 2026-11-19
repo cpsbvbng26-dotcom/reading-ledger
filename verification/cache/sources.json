@@ -1,0 +1,414 @@
+{
+ "_": [
+  "What each work prints, extracted by verification/check.py --record from the file at the recorded commit (fetched from raw.githubusercontent.com), or from the kept record."
+ ],
+ "golden-window-resolution": {
+  "bibitems": {
+   "v1": {
+    "doi": "10.6084/m9.figshare.34419198",
+    "arxiv": null,
+    "version": null
+   },
+   "note": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "LSZ": {
+    "doi": "10.1112/blms.70344",
+    "arxiv": "2509.04227",
+    "version": "v2"
+   },
+   "AKcrit": {
+    "doi": "10.1017/etds.2022.24",
+    "arxiv": "2109.10012",
+    "version": "v2"
+   },
+   "AKplat": {
+    "doi": "10.48550/arxiv.2304.06892",
+    "arxiv": "2304.06892",
+    "version": "v3"
+   },
+   "AKgen": {
+    "doi": "10.1017/etds.2025.10257",
+    "arxiv": "2411.03516",
+    "version": "v3"
+   },
+   "KSZ": {
+    "doi": null,
+    "arxiv": "2209.02373",
+    "version": "v4"
+   },
+   "KLX": {
+    "doi": "10.48550/arxiv.2604.23737",
+    "arxiv": "2604.23737",
+    "version": "v1"
+   },
+   "SLD": {
+    "doi": "10.1007/s10955-024-03265-0",
+    "arxiv": "2311.02465",
+    "version": "v1"
+   },
+   "SL": {
+    "doi": "10.1007/s12346-024-01180-z",
+    "arxiv": null,
+    "version": null
+   },
+   "Oliveira": {
+    "doi": null,
+    "arxiv": "2611.03287",
+    "version": "v1"
+   },
+   "BSV": {
+    "doi": null,
+    "arxiv": "1205.5902",
+    "version": "v3"
+   },
+   "KKLL": {
+    "doi": "10.1017/etds.2019.12",
+    "arxiv": null,
+    "version": null
+   },
+   "KKL17": {
+    "doi": "10.1016/j.aim.2016.03.047",
+    "arxiv": null,
+    "version": null
+   },
+   "AK19": {
+    "doi": "10.1016/j.aim.2019.106729",
+    "arxiv": null,
+    "version": null
+   },
+   "HR92": {
+    "doi": "10.4153/cmb-1992-013-x",
+    "arxiv": null,
+    "version": null
+   },
+   "Raith89": {
+    "doi": "10.4064/sm-94-1-17-33",
+    "arxiv": null,
+    "version": null
+   },
+   "Renyi": {
+    "doi": "10.1007/bf02020331",
+    "arxiv": null,
+    "version": null
+   },
+   "Parry": {
+    "doi": "10.1007/bf02020954",
+    "arxiv": null,
+    "version": null
+   },
+   "BK14": {
+    "doi": "10.1142/s0218348x14500169",
+    "arxiv": null,
+    "version": null
+   },
+   "MOS02": {
+    "doi": "10.1006/game.2001.0901",
+    "arxiv": null,
+    "version": null
+   },
+   "APS90": {
+    "doi": "10.2307/2938299",
+    "arxiv": null,
+    "version": null
+   },
+   "MS06": {
+    "doi": "10.1093/acprof:oso/9780195300796.001.0001",
+    "arxiv": null,
+    "version": null
+   },
+   "SeriesI": {
+    "doi": "10.5281/zenodo.22058624",
+    "arxiv": null,
+    "version": null
+   },
+   "SeriesII": {
+    "doi": "10.5281/zenodo.22058777",
+    "arxiv": null,
+    "version": null
+   },
+   "SeriesIII": {
+    "doi": "10.5281/zenodo.22058964",
+    "arxiv": null,
+    "version": null
+   },
+   "errata": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "roadmap": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "FJ90": {
+    "doi": "10.1080/0022250x.1990.9990069",
+    "arxiv": null,
+    "version": null
+   },
+   "FJ99": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "Abreu88": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "Friedman71": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "BT00": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "HJ13": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   }
+  },
+  "reading": {
+   "LSZ": "read",
+   "AKcrit": "read",
+   "AKplat": "read",
+   "AKgen": "read",
+   "KSZ": "read",
+   "KLX": "read",
+   "SLD": "read",
+   "SL": "read",
+   "Oliveira": "read",
+   "BSV": "read",
+   "HR92": "abstract only",
+   "KKL17": "abstract only",
+   "AK19": "abstract only",
+   "KKLL": "abstract only",
+   "BK14": "abstract only",
+   "MOS02": "abstract only",
+   "Renyi": "recalled, not read",
+   "Parry": "recalled, not read",
+   "Raith89": "recalled, not read",
+   "APS90": "recalled, not read",
+   "MS06": "recalled, not read",
+   "Abreu88": "recalled, not read",
+   "Friedman71": "recalled, not read",
+   "BT00": "recalled, not read",
+   "HJ13": "recalled, not read",
+   "FJ99": "recalled, not read"
+  },
+  "repository": "cpsbvbng26-dotcom/golden-window-resolution",
+  "commit": "e7c8c481b408e4f23ec64bee9162cb775f66ad92",
+  "file": "paper/golden-window-resolution.tex",
+  "sha256": "dc4637110f29daec135625ddeee31c276b9c3a1261cbed2877c90c9c1d14d1f4"
+ },
+ "joint-continuity": {
+  "bibitems": {
+   "Nem26": {
+    "doi": "10.6084/m9.figshare.35050300",
+    "arxiv": null,
+    "version": null
+   },
+   "v1": {
+    "doi": "10.6084/m9.figshare.34419198",
+    "arxiv": null,
+    "version": null
+   },
+   "AKcrit": {
+    "doi": "10.1017/etds.2022.24",
+    "arxiv": "2109.10012",
+    "version": "v2"
+   },
+   "AKgen": {
+    "doi": "10.1017/etds.2025.10257",
+    "arxiv": "2411.03516",
+    "version": "v3"
+   },
+   "BR": {
+    "doi": null,
+    "arxiv": "1510.06043",
+    "version": "v2"
+   },
+   "BSV": {
+    "doi": null,
+    "arxiv": "1205.5902",
+    "version": "v3"
+   },
+   "KKLL": {
+    "doi": "10.1017/etds.2019.12",
+    "arxiv": "1803.07338",
+    "version": "v1"
+   },
+   "KSZ": {
+    "doi": null,
+    "arxiv": "2209.02373",
+    "version": "v4"
+   },
+   "KLX": {
+    "doi": "10.48550/arxiv.2604.23737",
+    "arxiv": "2604.23737",
+    "version": "v1"
+   },
+   "LM": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   },
+   "LSZ": {
+    "doi": "10.1112/blms.70344",
+    "arxiv": "2509.04227",
+    "version": "v2"
+   },
+   "Oliveira": {
+    "doi": null,
+    "arxiv": "2611.03287",
+    "version": "v1"
+   },
+   "Raith92": {
+    "doi": "10.1007/bf02808156",
+    "arxiv": null,
+    "version": null
+   },
+   "Raith94": {
+    "doi": null,
+    "arxiv": null,
+    "version": null
+   }
+  },
+  "reading": {
+   "AKgen": "read",
+   "AKcrit": "read",
+   "LSZ": "read",
+   "KKLL": "read",
+   "BR": "read",
+   "KSZ": "read",
+   "KLX": "read",
+   "Oliveira": "read",
+   "BSV": "read",
+   "Raith94": "not read; cited as quoted in",
+   "Raith92": "not read; cited as quoted in",
+   "LM": "not read; cited as quoted in"
+  },
+  "repository": "cpsbvbng26-dotcom/golden-window-resolution",
+  "commit": "e7c8c481b408e4f23ec64bee9162cb775f66ad92",
+  "file": "continuity/paper/joint-continuity.tex",
+  "sha256": "e83986534ff040d3e7321eb9f5b6eec75d665a7236c993a13c1d1d07eefc105f"
+ },
+ "lit-check-2026-11-18": {
+  "dois": [
+   "10.1006/game.2001.0901",
+   "10.1007/bf01534862",
+   "10.1007/bf02020331",
+   "10.1007/bf02020954",
+   "10.1007/bf02808156",
+   "10.1007/s00182-009-0219-9",
+   "10.1007/s10614-016-9565-4",
+   "10.1007/s10955-024-03265-0",
+   "10.1007/s11238-011-9249-4",
+   "10.1007/s12346-024-01180-z",
+   "10.1016/0022-0531(91)90163-x",
+   "10.1016/0899-8256(91)90035-d",
+   "10.1016/j.aim.2016.03.047",
+   "10.1016/j.aim.2019.106729",
+   "10.1016/j.aim.2025.110710",
+   "10.1016/j.dam.2019.01.026",
+   "10.1017/etds.2015.135",
+   "10.1017/etds.2019.12",
+   "10.1017/etds.2022.24",
+   "10.1017/etds.2025.10257",
+   "10.1017/s0143385700003461",
+   "10.1080/0022250x.1990.9990069",
+   "10.1093/acprof:oso/9780195300796.001.0001",
+   "10.1112/blms.70344",
+   "10.1142/s0218348x14500169",
+   "10.1287/moor.11.1.147",
+   "10.2139/ssrn.267775",
+   "10.2307/2938299",
+   "10.3390/g9030047",
+   "10.3982/te1302",
+   "10.4064/sm-94-1-17-33",
+   "10.4153/cmb-1992-013-x",
+   "10.48550/arxiv.1503.00475",
+   "10.48550/arxiv.1804.02879",
+   "10.48550/arxiv.2109.10012",
+   "10.48550/arxiv.2205.13772",
+   "10.48550/arxiv.2304.06892",
+   "10.48550/arxiv.2311.02465",
+   "10.48550/arxiv.2404.04008",
+   "10.48550/arxiv.2505.02336",
+   "10.48550/arxiv.2509.04227",
+   "10.48550/arxiv.2604.23737",
+   "10.48550/arxiv.2610.14534"
+  ]
+ },
+ "trinity-operator-games": {
+  "bibitems": {
+   "10.1017/etds.2022.24": {
+    "doi": "10.1017/etds.2022.24",
+    "arxiv": "2109.10012",
+    "version": "v2"
+   },
+   "10.1142/s0218348x14500169": {
+    "doi": "10.1142/s0218348x14500169",
+    "arxiv": null,
+    "version": null
+   },
+   "10.1016/j.aim.2016.03.047": {
+    "doi": "10.1016/j.aim.2016.03.047",
+    "arxiv": null,
+    "version": null
+   },
+   "10.48550/arxiv.2604.23737": {
+    "doi": "10.48550/arxiv.2604.23737",
+    "arxiv": "2604.23737",
+    "version": "v1"
+   },
+   "10.1112/blms.70344": {
+    "doi": "10.1112/blms.70344",
+    "arxiv": "2509.04227",
+    "version": "v2"
+   },
+   "10.1006/game.2001.0901": {
+    "doi": "10.1006/game.2001.0901",
+    "arxiv": null,
+    "version": null
+   },
+   "10.1007/bf02020954": {
+    "doi": "10.1007/bf02020954",
+    "arxiv": null,
+    "version": null
+   },
+   "10.1007/bf02020331": {
+    "doi": "10.1007/bf02020331",
+    "arxiv": null,
+    "version": null
+   },
+   "10.1007/s10955-024-03265-0": {
+    "doi": "10.1007/s10955-024-03265-0",
+    "arxiv": "2311.02465",
+    "version": "v1"
+   }
+  },
+  "reading": {
+   "10.1017/etds.2022.24": "read",
+   "10.1142/s0218348x14500169": "abstract only",
+   "10.1016/j.aim.2016.03.047": "abstract only",
+   "10.48550/arxiv.2604.23737": "read",
+   "10.1112/blms.70344": "read",
+   "10.1006/game.2001.0901": "abstract only",
+   "10.1007/bf02020954": "recalled, not read",
+   "10.1007/bf02020331": "recalled, not read",
+   "10.1007/s10955-024-03265-0": "read"
+  },
+  "repository": "cpsbvbng26-dotcom/trinity-operator",
+  "commit": "2075619beaa5aab08c004a7f990396302203da73",
+  "file": "games/README.md",
+  "sha256": "c7f84a208e76dfbe4f52826feb9e0eba3821a796fba93f7b44c214ddb9d87ba3"
+ }
+}
