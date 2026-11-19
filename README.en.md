@@ -12,10 +12,35 @@ There are 4 ledgers with 93 items in all.
 They cover the paper of golden-window-resolution, its continuity paper (`continuity/paper/joint-continuity.tex`, with `continuity/REFEREE.md`), the literature check in `games/README.md` of trinity-operator, and the record of the literature check of 2026-11-18, kept as `sources/lit-check-2026-11-18.md`.
 The last is a search record, not a work: its items need not be cited anywhere.
 
-The reading of an item is one of `read` (with the sections read), `abstract only`, `record only` and `not read; cited as quoted in` (with the item that quoted it).
-It can also be `recalled, not read`, `own work`, or `not stated`, where the source says nothing about the reading.
-`record only` means that the bibliographic record was seen, and nothing more.
-The fields are listed in the Japanese README.
+## Fields of an entry
+
+| Field | Content |
+| --- | --- |
+| `key` | The key of the `\bibitem` in the paper; the DOI in a Markdown work; the name and year in the search record |
+| `citation` | The reference as printed |
+| `title`・`first_author` | The title of the reference and the family name of its first author |
+| `doi` | The DOI printed in the work |
+| `doi_found`・`doi_found_title` | A DOI not printed in the work but found in a registry record, and its title |
+| `arxiv`・`arxiv_version`・`arxiv_title` | The arXiv id and version read, and the title of that version |
+| `arxiv_from` | Where the version read was learnt, when the work does not print the arXiv id or the version |
+| `reading` | How the item was read; one of the table below |
+| `sections` | The sections read |
+| `quoted_in` | The item whose way of citing was followed, when the item itself was not read |
+| `date_read`・`date_read_until` | The date read; when it cannot be narrowed to a day, the dates before and after |
+| `cited_in` | The files that cite it |
+| `evidence` | Where the reading is recorded |
+| `relied_on`・`see` | What was relied on in the item, and the related records of correction |
+| `note` | A note, such as a difference between the printed title and the registry's title |
+
+| `reading` | Meaning |
+| --- | --- |
+| `read` | The text was read; `sections` names the sections |
+| `abstract only` | Only the abstract was read |
+| `record only` | Only the bibliographic record was seen; neither the abstract nor the text was read |
+| `not read; cited as quoted in` | Not read; cited as the item in `quoted_in` cites it |
+| `recalled, not read` | Named from memory; not read |
+| `own work` | The author's own paper or record |
+| `not stated` | The source does not say how it was read |
 
 ## Checks
 
@@ -62,9 +87,15 @@ Takuya Nemoto. ORCID iD [0009-0000-1406-0547](https://orcid.org/0009-0000-1406-0
 
 The ledgers and the checks were written by Claude Code (Anthropic) at the operator's request.
 The readings are copied from what the works and the record say; no item was read again to make the ledger.
+The search record (`sources/lit-check-2026-11-18.md`) is a report written by Claude Code (Anthropic) on 2026-11-18 at the operator's request.
+It is a literature check assisted by a language model, not a record of a person reading the items.
+The first person in it ("my own check") is Claude Code, the writer of the report.
+It is kept unchanged.
 Claude is not an author.
 
 ## Licence
 
 Ledgers and text are [CC BY 4.0](./LICENSE); code is [MIT](./LICENSE-CODE).
 The titles and names in the cached registry records are the records of each registry.
+The search record quotes short passages in quotation marks, mostly from the abstracts of the items it lists.
+Those passages are not licensed under CC BY 4.0 or the MIT License and remain their owners'.
