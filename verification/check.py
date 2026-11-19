@@ -430,6 +430,7 @@ CHECKS = [
     ("The writing rules: です/ます, no second person, no bold, one dash per paragraph, short sentences", lambda F: rules.prose(F, PROSE)),
     ("Every number in prose is in the ledger of numbers, and every count matches the ledgers", lambda F: rules.numbers(F, PROSE, COUNTERS)),
     ("README.md and README.en.md link each other, disclose the language model and name the licences", rules.readme_pair),
+    (".zenodo.json: one creator with the ORCID iD, the licence of LICENSE, the disclosure, the licence sentence, related identifiers found in the repository", rules.zenodo),
     ("Both READMEs list the fields of an entry and the readings, and say who wrote the search record and that its quotations are not licensed", readme_tables),
 ]
 
@@ -519,11 +520,17 @@ BREAKS = [
     (C[11], "a count that differs from the ledgers", sub("README.md", "台帳は 4 本です。", "台帳は 5 本です。")),
     (C[11], "a number not in the ledger of numbers", add("README.md", "\n文献は 7 件を読みました。\n")),
     (C[12], "README.md does not link the English page", sub("README.md", "[English](./README.en.md)", "English")),
-    (C[13], "README.en.md drops a field", sub("README.en.md", "| `arxiv_from` | Where the version read was learnt, when the work does not print the arXiv id or the version |\n", "")),
-    (C[13], "README.md names a field that entries do not have", sub("README.md", "| `note` | 注。", "| `notes` | 注。")),
-    (C[13], "README.en.md changes a reading", sub("README.en.md", "| `abstract only` | Only the abstract was read |", "| `abstract` | Only the abstract was read |")),
-    (C[13], "README.en.md drops who wrote the search record", sub("README.en.md", "is a report written by Claude Code (Anthropic) on 2026-11-18", "is a report written on 2026-11-18")),
-    (C[13], "README.md drops the licence of the quotations", sub("README.md", "引いた文は CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。\n", "")),
+    (C[13], ".zenodo.json loses the disclosure", sub(".zenodo.json", "Claude is not an author.", "Claude helped.")),
+    (C[13], ".zenodo.json gives an affiliation", sub(".zenodo.json", '"orcid": "0009-0000-1406-0547"', '"orcid": "0009-0000-1406-0547", "affiliation": "x"')),
+    (C[13], ".zenodo.json names the MIT licence", sub(".zenodo.json", '"license": "cc-by-4.0"', '"license": "mit"')),
+    (C[13], ".zenodo.json drops the name of the repository from the title", sub(".zenodo.json", '"title": "reading-ledger: ', '"title": "')),
+    (C[13], ".zenodo.json names another repository in the title", sub(".zenodo.json", '"title": "reading-ledger: ', '"title": "self-correction: ')),
+    (C[13], ".zenodo.json gives a contributor an affiliation and says no affiliation elsewhere", sub(".zenodo.json", '"upload_type": ', '"contributors": [{"name": "x", "type": "Other", "affiliation": "y"}], "comment": "no affiliation", "upload_type": ')),
+    (C[14], "README.en.md drops a field", sub("README.en.md", "| `arxiv_from` | Where the version read was learnt, when the work does not print the arXiv id or the version |\n", "")),
+    (C[14], "README.md names a field that entries do not have", sub("README.md", "| `note` | 注。", "| `notes` | 注。")),
+    (C[14], "README.en.md changes a reading", sub("README.en.md", "| `abstract only` | Only the abstract was read |", "| `abstract` | Only the abstract was read |")),
+    (C[14], "README.en.md drops who wrote the search record", sub("README.en.md", "is a report written by Claude Code (Anthropic) on 2026-11-18", "is a report written on 2026-11-18")),
+    (C[14], "README.md drops the licence of the quotations", sub("README.md", "引いた文は CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。\n", "")),
 ]
 
 if __name__ == "__main__":
