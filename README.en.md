@@ -4,6 +4,7 @@
 
 A ledger, per work, of how far each cited item was read, which version was read, and when.
 Citing an item and reading it are different things; the ledger writes the difference down, item by item.
+The archive is on Zenodo. The DOI of the first version is [`10.5281/zenodo.24382375`](https://doi.org/10.5281/zenodo.24382375), and the DOI common to all versions is [`10.5281/zenodo.24382374`](https://doi.org/10.5281/zenodo.24382374).
 
 ## Ledgers
 
