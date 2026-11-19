@@ -375,13 +375,54 @@ COUNTERS = {
 }
 
 
+
+def table_names(text, head):
+    """The backticked names in the first column of the table whose header row starts with head."""
+    i = text.find("\n" + head)
+    if i < 0:
+        return None
+    names = []
+    for line in text[i + 1:].split("\n")[2:]:
+        if not line.startswith("|"):
+            break
+        names += re.findall(r"`([^`]+)`", line.split(" | ")[0])
+    return names
+
+
+SEARCH_RECORD = {
+    "README.md": ("控え（`sources/lit-check-2026-11-18.md`）は、2026-11-18 に運営者が求め、Claude Code（Anthropic）が文献を検索して書いた報告です。",
+                  "控えは言語モデルを使った確認で、人が文献を読んだ記録ではありません。",
+                  "引いた文は CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。"),
+    "README.en.md": ("The search record (`sources/lit-check-2026-11-18.md`) is a report written by Claude Code (Anthropic) on 2026-11-18 at the operator's request.",
+                     "It is a literature check assisted by a language model, not a record of a person reading the items.",
+                     "Those passages are not licensed under CC BY 4.0 or the MIT License and remain their owners'."),
+}
+
+
+def readme_tables(F):
+    """Both READMEs list every field of an entry and every reading, and no other, and say who wrote the search record
+    and that the passages it quotes are not licensed."""
+    bad = []
+    for f, fh, rh in (("README.md", "| 欄 | 中身 |", "| `reading` | 意味 |"), ("README.en.md", "| Field | Content |", "| `reading` | Meaning |")):
+        t = F.get(f, "")
+        got = table_names(t, fh)
+        if got is None or sorted(got) != sorted(FIELDS) or len(got) != len(set(got)):
+            bad.append(f + ": the table of fields is not the fields of an entry")
+        got = table_names(t, rh)
+        if got is None or got != list(READINGS):
+            bad.append(f + ": the table of readings is not the readings")
+        for s in SEARCH_RECORD[f]:
+            if s not in t:
+                bad.append(f + ": the search record: " + s[:30])
+    return bad
+
 CHECKS = [
     ("Every entry has a citation, an identifier or none, a reading from the vocabulary, a date where read, and the file where it is cited", schema),
     ("Every DOI and arXiv id matches its registry record in title and first author (cached; --online fetches again)", registry_cached),
     ("Every bibitem has an entry, every entry is a bibitem, and the DOI, arXiv id, version and reading agree with what the work prints (cached; --online fetches again)", sources_cached),
     ("The Raith example: the two works name the same correction and say which Raith paper each relied on", see_pairs),
     ("Copies of the canonical files and the licences are byte-identical (sha256)", rules.copies),
-    ("No university name, other place of creative work, self-title, item of rule 10 or single relative", rules.words_not_written),
+    ("No name of the operator's own university in any spelling, other place of creative work, self-title, item of rule 10 or single relative", rules.words_not_written),
     ("No e-mail address in any file", rules.no_email),
     ("Workflows: actions pinned to commits, permissions, timeouts; Dependabot", rules.workflows),
     ("labels.yml makes the labels of the canonical workflows", lambda F: rules.labels(F)),
@@ -390,6 +431,7 @@ CHECKS = [
     ("Every number in prose is in the ledger of numbers, and every count matches the ledgers", lambda F: rules.numbers(F, PROSE, COUNTERS)),
     ("README.md and README.en.md link each other, disclose the language model and name the licences", rules.readme_pair),
     (".zenodo.json: one creator with the ORCID iD, the licence of LICENSE, the disclosure, the licence sentence, related identifiers found in the repository", rules.zenodo),
+    ("Both READMEs list the fields of an entry and the readings, and say who wrote the search record and that its quotations are not licensed", readme_tables),
 ]
 
 
@@ -462,7 +504,11 @@ BREAKS = [
     (C[3], "the Raith example loses the correction it names", sub(JCL, 'see = "self-correction GW-001"\n', '')),
     (C[3], "the Raith example says the work relied on another paper", sub(GWL, 'AKgen cites Raith\'s 1994 paper', 'AKgen cites this paper')),
     (C[4], "one character of SECURITY.md", sub("SECURITY.md", "7 日以内", "8 日以内")),
+    (C[4], "the note on the copies says the cross-repository check compares them", sub("verification/copies.json", "いま正本と写しを突き合わせるのは、このリポジトリの検査（verification/rules.py の copies）だけです。cpsbvbng26-dotcom の横断の検査（verification/check_ecosystem.js）は、まだこのリポジトリを見ていません。", "cpsbvbng26-dotcom の verification/check_ecosystem.js も、正本と写しを突き合わせます。")),
     (C[5], "the university's name", add("README.md", "\n" + rules.dec("WkVO") + " " + rules.dec("VW5pdmVyc2l0eQ==") + "\n")),
+    (C[5], "the university's name, romanised", add("README.md", "\n" + rules.dec("emVu") + " " + rules.dec("ZGFpZ2FrdQ==") + "\n")),
+    (C[5], "the university's name in hiragana", add("README.md", "\n" + rules.dec("44Gc44KT") + rules.dec("44Gg44GE44GM44GP") + "\n")),
+    (C[5], "the university's name in katakana, spelt out", add("README.md", "\n" + rules.dec("44K844Oz") + rules.dec("44OA44Kk44Ks44Kv") + "\n")),
     (C[5], "the other place of creative work", add("ledger/trinity-operator-games.toml", "# " + rules.OTHER_PLACE[2] + "\n")),
     (C[6], "an e-mail address", add("sources/lit-check-2026-11-18.md", "\nwriter" + "@" + "example.com\n")),
     (C[7], "an action named by its version", sub(".github/workflows/check.yml", "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1", "actions/checkout@v7")),
@@ -477,6 +523,11 @@ BREAKS = [
     (C[13], ".zenodo.json loses the disclosure", sub(".zenodo.json", "Claude is not an author.", "Claude helped.")),
     (C[13], ".zenodo.json gives an affiliation", sub(".zenodo.json", '"orcid": "0009-0000-1406-0547"', '"orcid": "0009-0000-1406-0547", "affiliation": "x"')),
     (C[13], ".zenodo.json names the MIT licence", sub(".zenodo.json", '"license": "cc-by-4.0"', '"license": "mit"')),
+    (C[14], "README.en.md drops a field", sub("README.en.md", "| `arxiv_from` | Where the version read was learnt, when the work does not print the arXiv id or the version |\n", "")),
+    (C[14], "README.md names a field that entries do not have", sub("README.md", "| `note` | 注。", "| `notes` | 注。")),
+    (C[14], "README.en.md changes a reading", sub("README.en.md", "| `abstract only` | Only the abstract was read |", "| `abstract` | Only the abstract was read |")),
+    (C[14], "README.en.md drops who wrote the search record", sub("README.en.md", "is a report written by Claude Code (Anthropic) on 2026-11-18", "is a report written on 2026-11-18")),
+    (C[14], "README.md drops the licence of the quotations", sub("README.md", "引いた文は CC BY 4.0 でも MIT でも許諾しておらず、それぞれの権利者のものです。\n", "")),
 ]
 
 if __name__ == "__main__":
